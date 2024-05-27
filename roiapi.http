@@ -1,0 +1,88 @@
+@HostAddress = http://localhost:5095
+
+### Departments Operations ###
+
+# GET all departments
+GET {{HostAddress}}/api/departments HTTP/1.1
+
+###
+
+# GET department by ID
+GET {{HostAddress}}/api/departments/1 HTTP/1.1
+
+###
+
+# POST create department
+POST {{HostAddress}}/api/departments HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "New Department"
+}
+
+###
+
+# PUT update department
+PUT {{HostAddress}}/api/departments/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Updated Department"
+}
+
+###
+
+# DELETE department
+DELETE {{HostAddress}}/api/departments/6 HTTP/1.1
+
+### People CRUD Operations ###
+
+# GET all people
+GET {{HostAddress}}/api/people HTTP/1.1
+
+###
+
+# GET person by ID
+GET {{HostAddress}}/api/people/1 HTTP/1.1
+
+###
+
+# POST create person
+POST {{HostAddress}}/api/people HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "New Person",
+    "phone": "1234567890",
+    "departmentId": 1,
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "ST",
+    "zip": "12345",
+    "country": "US"
+}
+
+###
+
+# PUT update person
+PUT {{HostAddress}}/api/people/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 6,
+    "name": "Updated Person",
+    "phone": "0987654321",
+    "departmentId": 2,
+    "street": "456 Elm St",
+    "city": "Othertown",
+    "state": "OT",
+    "zip": "54321",
+    "country": "US",
+    "department": null
+}
+
+###
+
+# DELETE person
+DELETE {{HostAddress}}/api/people/6 HTTP/1.1
